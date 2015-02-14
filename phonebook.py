@@ -1,10 +1,9 @@
 __author__ = 'Beni'
 
 phonebook = {
-    "Nathan": {"name": "Nathan", "phone": "1231231234"},
-     "Ken": {"name": "Ken", "phone": "4353453456"}
+    "Nathan":   {"name": "Nathan", "phone": "1231231234"},
+    "Ken":      {"name": "Ken", "phone": "4353453456"}
 }
-
 
 
 def add():
@@ -13,6 +12,7 @@ def add():
 
     phonebook[name] = {"name": name, "phone": phone}
     print name.upper() + " has been added!"
+
 
 def search():
     name_2 = raw_input("What is the name you would like to search for? ")
@@ -23,6 +23,7 @@ def search():
         print " "
         print "That name is not in the phonebook."
 
+
 def remove():
     to_pop = raw_input("What name would you like to remove? ")
     if to_pop in phonebook:
@@ -31,15 +32,18 @@ def remove():
     else:
         print "That name is not in the phonebook."
 
+
 def edit():
     change = raw_input("Who's phone number would you like to edit? ").lower()
     new_number = raw_input("What is the new phone number for " + change + " ?")
     phonebook[change]["phone"] = new_number
     print change + "'s number has been updated."
 
+
 print "-"*75
 print " "*75
 print "Welcome to the phone book app!"
+
 
 while True:
     print " "
@@ -55,7 +59,6 @@ while True:
     print " "
     print "-"*75
     print " "*75
-
 
     try:
         prompt = input("> ")
@@ -74,6 +77,5 @@ while True:
         if prompt == 5:
             print "Exit.  Goodbye."
             break
-
     except:
             print "That option is not available."
