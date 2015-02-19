@@ -113,7 +113,6 @@ def duel(player_attack, monster_attack, mnum_choice):
         print("You attack {} with your {}.  The damage is {}.".format(mnum_choice.m_name, player1.player_weapon, x))
         print(" ")
         mnum_choice.m_life = mnum_choice.m_life - x
-#  NEED TO CREATE A WAY FOR THE PLAYER TO DIE IN THIS FUNCTION
         player1.life = player1.life - y
         if player1.life <= 0:
             clear()
@@ -167,13 +166,12 @@ def play():
         clear()
         print "*"*75
         print("You have entered a new room, it appears there is a MONSTER here.\n")
-        print("You look at the monster and notice that:")
+        print("You look at the monster, {}, and notice that:".format(mnum_choice.m_name))
         print(" ")
         print "*"*75
-        print("{}'s status is: ".format(mnum_choice.m_name))
-        print("Life = {}.".format(mnum_choice.m_life))
-        print("Wielding a {}.".format(mnum_choice.m_weapon))
-        print("He's wearing a {}.".format(mnum_choice.m_wear))
+        print("His Life Points are = {}.".format(mnum_choice.m_life))
+        print("He is Wielding a {}.".format(mnum_choice.m_weapon))
+        print("He is wearing a {}.".format(mnum_choice.m_wear))
         print "*"*75
         print(" ")
         fight_choice = int(input("ENTER 1 to fight!  ENTER 0 to run. "))
