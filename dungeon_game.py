@@ -132,6 +132,8 @@ def duel(player_attack, monster_attack, mnum_choice):
                 clear()
                 print("You run away just in time!")
                 break
+            else:
+                print("I did not understand your entry.  Lets run!")
         else:
             clear()
             print("*" * 75)
@@ -174,18 +176,23 @@ def play():
         print("He is wearing a {}.".format(mnum_choice.m_wear))
         print "*"*75
         print(" ")
-        fight_choice = int(input("ENTER 1 to fight!  ENTER 0 to run. "))
-        if fight_choice == 1:
+        try:
+            fight_choice = int(input("ENTER 1 to fight!  ENTER 0 to run. "))
+            if fight_choice == 1:
+                clear()
+                duel(strike(), m_strike(), mnum_choice)
+            elif fight_choice == 0:
+                clear()
+                print("*" * 75)
+                print("You run away from {} in shame.".format(mnum_choice.m_name))
+        except:
             clear()
-            duel(strike(), m_strike(), mnum_choice)
-        elif fight_choice == 0:
-            clear()
-            print("*" * 75)
-            print("You run away from {} in shame.".format(mnum_choice.m_name))
+            print("I did not understand that entry.  Lets run!")
     elif spawn_alive is False:
         clear()
         print("*" * 75)
         print("You have entered a new room, it is empty.")
+
 
 
 clear = lambda: os.system('clear')
@@ -217,7 +224,7 @@ print " "
 print("Excellent choice {}, the {} suits you well.".format(player_name, player_weapon))
 print "-" * 75
 print " "
-print("There is a slight whine to your right.")
+print("There is a slight noise to your right.")
 print("Before you is a:")
 print(" ")
 print("MONKEY")
