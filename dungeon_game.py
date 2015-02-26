@@ -194,7 +194,6 @@ def play():
         print("You have entered a new room, it is empty.")
 
 
-
 clear = lambda: os.system('clear')
 
 clear()
