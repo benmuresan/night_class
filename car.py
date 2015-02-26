@@ -6,7 +6,7 @@ def car (want_a_car, color, doors, cost):
 		if int(cost) < 5000:
 				print "You are way too cheap! Bye"
 		else:
-			print "Sold!"
+			print "Soldddd!"
 	else:
 		print "Okay fine, No car for you!!."
 
